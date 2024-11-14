@@ -37,6 +37,11 @@
                     <a href="{{ $profileItem->youtube ?? '#' }}" target="{{ $profileItem->youtube ? '_blank' : '' }}" class="text-gray-600 hover:text-red-600 hover:scale-110 duration-300">
                         <i class="fab fa-youtube fa-lg"></i>
                     </a>
+
+                    <!-- Instagram -->
+                    <a href="{{ $profileItem->instagram ?? '#' }}" target="{{ $profileItem->instagram ? '_blank' : '' }}" class="text-gray-600 hover:text-orange-600 hover:scale-110 duration-300">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
                 </div>
                 
                 </div>
