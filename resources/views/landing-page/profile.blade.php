@@ -12,33 +12,33 @@
                     <h1 class="text-3xl font-bold text-gray-800"> {{ $profileItem->nama }}</h1>
                     <p class="typing text-sky-700 font-medium italic"> {{ $profileItem->pekerjaan }}</p>
                 </div>
-                    <div class="flex justify-center space-x-4">
-                        @if ($profileItem->facebook)
-                            <a href="{{ $profileItem->facebook }}" target="_blank" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300">
-                                <i class="fab fa-facebook fa-lg"></i>
-                            </a>
-                        @endif
-                        @if ($profileItem->linkedin)
-                            <a href="{{ $profileItem->linkedin }}" target="_blank" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300">
-                                <i class="fab fa-linkedin fa-lg"></i>
-                            </a>
-                        @endif
-                        @if ($profileItem->whatsapp)
-                            <a href="{{ $profileItem->whatsapp }}" target="_blank" class="text-gray-600 hover:text-green-600 hover:scale-110 duration-300">
-                                <i class="fab fa-whatsapp fa-lg"></i>
-                            </a>
-                        @endif
-                        @if ($profileItem->twitter)
-                            <a href="{{ $profileItem->twitter }}" target="_blank" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300">
-                                <i class="fab fa-twitter fa-lg"></i>
-                            </a>
-                        @endif
-                        @if ($profileItem->youtube)
-                            <a href="{{ $profileItem->youtube }}" target="_blank" class="text-gray-600 hover:text-red-600 hover:scale-110 duration-300">
-                                <i class="fab fa-youtube fa-lg"></i>
-                            </a>
-                        @endif
-                    </div>              
+                <div class="flex justify-center space-x-4">
+                    <!-- Facebook -->
+                    <a href="{{ $profileItem->facebook ?? '#' }}" target="{{ $profileItem->facebook ? '_blank' : '' }}" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </a>
+                
+                    <!-- LinkedIn -->
+                    <a href="{{ $profileItem->linkedin ?? '#' }}" target="{{ $profileItem->linkedin ? '_blank' : '' }}" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                
+                    <!-- WhatsApp -->
+                    <a href="{{ $profileItem->whatsapp ?? '#' }}" target="{{ $profileItem->whatsapp ? '_blank' : '' }}" class="text-gray-600 hover:text-green-600 hover:scale-110 duration-300">
+                        <i class="fab fa-whatsapp fa-lg"></i>
+                    </a>
+                
+                    <!-- Twitter -->
+                    <a href="{{ $profileItem->twitter ?? '#' }}" target="{{ $profileItem->twitter ? '_blank' : '' }}" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </a>
+                
+                    <!-- YouTube -->
+                    <a href="{{ $profileItem->youtube ?? '#' }}" target="{{ $profileItem->youtube ? '_blank' : '' }}" class="text-gray-600 hover:text-red-600 hover:scale-110 duration-300">
+                        <i class="fab fa-youtube fa-lg"></i>
+                    </a>
+                </div>
+                
                 </div>
             </div>
         <div class="flex border-t border-gray-300 text-xs">
