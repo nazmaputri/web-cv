@@ -13,10 +13,30 @@
                     <div class="items-center text-center justify-center w-full" id="navbar-sticky">
                         <ul class="flex md:flex-col space-x-3 md:space-y-4 items-center justify-around md:justify-center md:space-x-0">
                             {{-- <a href="/" class="block lg:hidden px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 {{ Request::is('/') ? 'text-sky-800 border-b-4 md:border-l-4 border-sky-700' : 'hover:bg-gray-200  text-gray-600' }} duration-500"><i class="fa-solid fa-house"></i></a> --}}
-                            <a href="/" class="block px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 {{ Request::is('/') ? 'text-sky-700 border-b-4 md:border-l-4 border-sky-700 bg-gray-200' : 'hover:bg-gray-200  text-gray-600' }} duration-300"><i class="fa-solid fa-user-tie fa-lg"></i></a>
-                            <a href="/lp-resume" class="block px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 {{ Request::is('lp-resume') ? 'text-sky-700 border-b-4 md:border-l-4 border-sky-700 bg-gray-200' : 'hover:bg-gray-200  text-gray-600' }} duration-300"><i class="fa-solid fa-list fa-lg"></i></a>
-                            <a href="/lp-certificate" class="block px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 {{ Request::is('lp-certificate') ? 'text-sky-700 border-b-4 md:border-l-4 border-sky-700 bg-gray-200' : 'hover:bg-gray-200  text-gray-600' }} duration-300"><i class="fa-solid fa-suitcase fa-lg"></i></a>
-                            <a href="/lp-contact" class="block px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 group {{ Request::is('lp-contact') ? 'text-sky-700 border-b-4 md:border-l-4 border-sky-700 bg-gray-200' : 'hover:bg-gray-200  text-gray-600' }} duration-300"><i class="fa-solid fa-paper-plane fa-lg group-hover:skew-y-12 duration-300"></i></a>
+                            <div class="relative group inline-block">
+                                <a href="/" class="block px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 group {{ Request::is('/') ? 'text-sky-700 border-b-4 md:border-l-4 border-sky-700 bg-gray-200' : 'hover:bg-gray-200  text-gray-600' }} duration-300"><i class="fa-solid fa-user-tie fa-lg group-hover:scale-105 duration-300"></i></a>
+                                <span class="absolute left-full top-1/2 transform -translate-y-1/2 ml-2 text-sm text-white bg-sky-700 p-2 rounded opacity-0 group-hover:opacity-75 group-hover:ml-3 transition-opacity duration-300">
+                                    About
+                                </span>
+                            </div>
+                            <div class="relative group inline-block">
+                                <a href="/lp-resume" class="block px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 group {{ Request::is('lp-resume') ? 'text-sky-700 border-b-4 md:border-l-4 border-sky-700 bg-gray-200' : 'hover:bg-gray-200  text-gray-600' }} duration-300"><i class="fa-solid fa-list fa-lg group-hover:scale-105 duration-300"></i></a>
+                                <span class="absolute left-full top-1/2 transform -translate-y-1/2 ml-2 text-sm text-white bg-sky-700 p-2 rounded opacity-0 group-hover:opacity-75 group-hover:ml-3 transition-opacity duration-300">
+                                    Resume
+                                </span>
+                            </div>
+                            <div class="relative group inline-block">
+                                <a href="/lp-certificate" class="block px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 group {{ Request::is('lp-certificate') ? 'text-sky-700 border-b-4 md:border-l-4 border-sky-700 bg-gray-200' : 'hover:bg-gray-200  text-gray-600' }} duration-300"><i class="fa-solid fa-suitcase fa-lg group-hover:scale-105 duration-300"></i></a>
+                                 <span class="absolute left-full top-1/2 transform -translate-y-1/2 ml-2 text-sm text-white bg-sky-700 p-2 rounded opacity-0 group-hover:opacity-75 group-hover:ml-3 transition-opacity duration-300">
+                                     Certificates
+                                 </span>
+                            </div>
+                            <div class="relative group inline-block">
+                                <a href="/lp-contact" class="block px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 group {{ Request::is('lp-contact') ? 'text-sky-700 border-b-4 md:border-l-4 border-sky-700 bg-gray-200' : 'hover:bg-gray-200  text-gray-600' }} duration-300"><i class="fa-solid fa-paper-plane fa-lg group-hover:scale-105 group-hover:skew-y-12 duration-300"></i></a>
+                                <span class="absolute left-full top-1/2 transform -translate-y-1/2 ml-2 text-sm text-white bg-sky-700 p-2 rounded opacity-0 group-hover:opacity-75 group-hover:ml-3 transition-opacity duration-300">
+                                    Contact
+                                </span>
+                            </div>
                         </ul>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="bg-white p-8">
     <h1 class="text-3xl font-bold border-b-2  border-gray-300 pb-2 mb-8">Daftar Sertifikat</h1>
-    <div class="flex justify-end">
+    <div class="flex justify-start">
         <a href="{{ route('certificates.create') }}" class="bg-cyan-400 text-white px-4 py-2 rounded">Tambah Sertifikat</a>
     </div>    
 
@@ -15,12 +15,12 @@
         @foreach($certificates as $certificate)
             <div class=" bg-white p-4 shadow-md rounded mb-4 ">
                 <h2 class="font-semibold">{{ $certificate->judul }}</h2>
-                <p>Nomor Sertifikat: {{ $certificate->nomor_sertifikat }}</p>
+                <p>Nomor Sertifikat : {{ $certificate->nomor_sertifikat }}</p>
                 @if($certificate->foto)
                     <img src="{{ asset('storage/' . $certificate->foto) }}" alt="Certificate Image" class="w-32 h-32 object-cover mt-2">
                 @endif
                 <div class="mt-4">
-                    <a href="{{ route('certificates.edit', $certificate->id) }}" class="bg-yellow-400 text-white px-4 py-2 rounded">Edit</a>
+                    <a href="{{ route('certificates.edit', $certificate->id) }}" class="bg-blue-400 text-white px-4 py-2 rounded">Edit</a>
                     <form action="{{ route('certificates.destroy', $certificate->id) }}" method="POST" class="inline">
                         @csrf
                         @method('DELETE')

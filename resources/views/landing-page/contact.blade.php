@@ -16,20 +16,20 @@
             <!-- CONTACT INFO SECTION -->
             <div class="space-y-1 mx-auto py-6 px-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 border-b border-gray-300">
                 <div class="flex justify-between space-x-4 items-start break-words">
-                    <span class="font-medium bg-sky-700 rounded-md text-white px-3 py-1">Address:</span>
-                    <span class="text-gray-800 text-right">{{ $aboutItem->alamat }}</span>
+                    <span data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500" class="font-medium bg-sky-700 rounded-md text-white px-3 py-1">Address:</span>
+                    <span data-aos="fade-left" data-aos-delay="300" data-aos-duration="1500" class="text-gray-800 text-right">{{ $aboutItem->alamat }}</span>
                 </div>
                 <div class="flex justify-between space-x-4 items-start">
-                    <span class="font-medium bg-sky-700 rounded-md text-white px-3 py-1">Email:</span>
-                    <span class="text-gray-800 text-right">{{ $aboutItem->email }}</span>
+                    <span data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500" class="font-medium bg-sky-700 rounded-md text-white px-3 py-1">Email:</span>
+                    <span data-aos="fade-left" data-aos-delay="300" data-aos-duration="1500" class="text-gray-800 text-right">{{ $aboutItem->email }}</span>
                 </div>
                 <div class="flex justify-between space-x-4 items-start">
-                    <span class="font-medium bg-sky-700 rounded-md text-white px-3 py-1">Phone:</span>
-                    <span class="text-gray-800 text-right">{{ $aboutItem->no_telp }}</span>
+                    <span data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500" class="font-medium bg-sky-700 rounded-md text-white px-3 py-1">Phone:</span>
+                    <span data-aos="fade-left" data-aos-delay="300" data-aos-duration="1500" class="text-gray-800 text-right">{{ $aboutItem->no_telp }}</span>
                 </div>
                 <div class="flex justify-between space-x-4 items-start">
-                    <span class="font-medium bg-sky-700 rounded-md text-white px-3 py-1">Residence:</span>
-                    <span class="text-gray-800 text-right">{{ $aboutItem->negara }}</span>
+                    <span data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500" class="font-medium bg-sky-700 rounded-md text-white px-3 py-1">Residence:</span>
+                    <span data-aos="fade-left" data-aos-delay="300" data-aos-duration="1500" class="text-gray-800 text-right">{{ $aboutItem->negara }}</span>
                 </div>
             </div>
         @endforeach
@@ -38,19 +38,19 @@
         <form action="#" method="POST" class="py-8 px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <!-- Nama Lengkap -->
-                <div class="flex flex-col">
+                <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500" class="flex flex-col">
                     <label for="full-name" class="text-gray-700 font-medium mb-2">Nama Lengkap</label>
                     <input type="text" id="full-name" name="full_name" class="p-2 border outline-none rounded-lg focus:border-sky-700 focus:ring-1 focus:ring-sky-700" required placeholder="Masukkan nama lengkap">
                 </div>
                 <!-- Alamat Email -->
-                <div class="flex flex-col">
+                <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500" class="flex flex-col">
                     <label for="email" class="text-gray-700 font-medium mb-2">Alamat Email</label>
                     <input type="email" id="email" name="email" class="p-2 border outline-none rounded-lg focus:border-sky-700 focus:ring-1 focus:ring-sky-700" required placeholder="Masukkan alamat email">
                 </div>
             </div>
 
             <!-- Pesan -->
-            <div class="flex flex-col mt-4">
+            <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500" class="flex flex-col mt-4">
                 <label for="message" class="text-gray-700 font-medium mb-2">Pesan</label>
                 <textarea id="message" name="message" class="p-2 border outline-none rounded-lg focus:border-sky-700 focus:ring-1 focus:ring-sky-700" rows="4" required placeholder="Masukkan pesan"></textarea>
             </div>

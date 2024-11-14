@@ -14,8 +14,8 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="job" class="block text-sm font-semibold">Pekerjaan</label>
-                    <input type="text" id="job" name="job" class="w-full p-2 border border-gray-300 rounded" required>
+                    <label for="profile_picture" class="block text-sm font-semibold">Foto Profil</label>
+                    <input type="file" id="profile_picture" name="profile_picture" class="w-full p-2 border border-gray-300 rounded">
                 </div>
 
                 <div class="mb-4">
@@ -48,18 +48,9 @@
                     <input type="url" id="linkedin" name="linkedin" class="w-full p-2 border border-gray-300 rounded" placeholder="https://linkedin.com/in/yourprofile">
                 </div>
 
-                <div class="mb-4">
-                    <label for="profile_picture" class="block text-sm font-semibold">Foto Profil</label>
-                    <input type="file" id="profile_picture" name="profile_picture" class="w-full p-2 border border-gray-300 rounded">
-                </div>
-
-                <div class="mb-4">
-                    <label for="cv" class="block text-sm font-semibold">CV (PDF)</label>
-                    <input type="file" id="cv" name="cv" class="w-full p-2 border border-gray-300 rounded" accept="application/pdf">
-                </div>
-
-                <div class="flex mt-4 justify-end">
-                    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Simpan Profil</button>
+                <div class="ml-auto text-end mt-8 space-x-2">  
+                    <button type="submit" class="bg-blue-400 hover:bg-blue-600 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200">Tambah</button>
+                    <a href="{{ route('profile.index') }}" class="ml-2 bg-gray-400 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200 hover:bg-gray-600">Batal</a>
                 </div>
             </form>
         </div>

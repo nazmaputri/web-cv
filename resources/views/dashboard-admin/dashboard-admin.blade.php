@@ -1,44 +1,49 @@
-@extends('layouts.dashboard-admin') <!-- Pastikan ini mengarah ke layout yang umum digunakan -->
-
-@section('title', 'Dashboard Admin')
+@extends('layouts.dashboard-admin') 
 
 @section('content')
 
 <!-- Admin Dashboard -->
-<div class="bg-white p-6 rounded-lg shadow-lg">
+<div class="bg-gray-50 p-8 rounded-lg shadow-xl">
+    @if(session('success'))
+        <div class="text-white bg-green-400 mb-3 text-center justify-center w-auto p-1 rounded-sm">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <!-- Welcome Message -->
-    <div class="text-center mb-8">
-        <h1 class="text-3xl font-bold text-gray-800">Selamat Datang di Dashboard Admin</h1>
-        <p class="text-gray-600 mt-2">Ini adalah halaman utama admin untuk mengelola CV pribadi.</p>
+    <div class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-gray-800">Selamat Datang di Dashboard Admin</h1>
+        <p class="text-gray-600 mt-2 text-lg">Halaman utama untuk mengelola CV pribadi Anda.</p>
     </div>
 
-    <!-- Stats Section (Example) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Stats Section (Dinamis) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Total Skills -->
-        <div class="bg-sky-800 text-white p-4 rounded-lg shadow-lg">
-            <h3 class="text-xl font-semibold">Total Skills</h3>
-            <p class="mt-2">15 Skills</p>
+        <div class="bg-gradient-to-r from-sky-800 to-sky-500 text-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+            <h3 class="text-xl font-semibold">Total Keterampilan</h3>
+            <p class="text-3xl font-bold mt-2">{{ $totalSkills }}</p>
         </div>
 
         <!-- Total Experience -->
-        <div class="bg-green-500 text-white p-4 rounded-lg shadow-lg">
-            <h3 class="text-xl font-semibold">Total Experience</h3>
-            <p class="mt-2">5 Years</p> 
+        <div class="bg-gradient-to-r from-green-500 to-green-300 text-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+            <h3 class="text-xl font-semibold">Total Pengalaman</h3>
+            <p class="text-3xl font-bold mt-2">{{ $totalExperience }}</p> 
         </div>
 
         <!-- Total Languages -->
-        <div class="bg-yellow-400 text-white p-4 rounded-lg shadow-lg">
-            <h3 class="text-xl font-semibold">Total Languages</h3>
-            <p class="mt-2">2 Languages</p> 
+        <div class="bg-gradient-to-r from-yellow-400 to-yellow-300 text-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+            <h3 class="text-xl font-semibold">Total Bahasa</h3>
+            <p class="text-3xl font-bold mt-2">{{ $totalLanguages }}</p> 
         </div>
     </div>
 
     <!-- Quick Links -->
-    <div class="mt-8 text-center">
-        <a href="{{ route('skill.index') }}" class="bg-cyan-500 text-white px-6 py-3 rounded-lg hover:bg-cyan-600">Manage Skills</a>
-        <a href="{{ route('experience.index') }}" class="ml-4 bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">Manage Experience</a>
-        <a href="{{ route('languages.index') }}" class="ml-4 bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600">Manage Languages</a>
+    <div class="mt-12 flex justify-center">
+        <div class="text-center space-y-4 space-x-4">
+            <a href="{{ route('skill.index') }}" class="bg-sky-500 text-white px-8 py-3 rounded-lg hover:bg-sky-600 shadow-md transition-transform transform hover:scale-105 inline-block">Update Keterampilan</a>
+            <a href="{{ route('experience.index') }}" class="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 shadow-md transition-transform transform hover:scale-105 inline-block">Update Pengalaman Kerja</a>
+            <a href="{{ route('skill.index') }}" class="bg-yellow-500 text-white px-8 py-3 rounded-lg hover:bg-yellow-600 shadow-md transition-transform transform hover:scale-105 inline-block">Update Bahasa</a>
+        </div>
     </div>
 
 </div>

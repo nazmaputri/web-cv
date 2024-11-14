@@ -2,16 +2,21 @@
 
 @section('content')
 <div class="container mx-auto">
-    <h1 class="text-3xl font-bold mb-6">Edit Data About</h1>
 
-    <!-- Form Inside a Card Layout -->
+    <!-- Card Layout Start -->
     <div class="bg-white shadow-lg rounded-lg p-6">
+        
+        <!-- Title Inside the Card -->
+        <h1 class="text-2xl border-b-2 pb-2 font-bold mb-6 text-gray-800">Edit Data About</h1>
+
+        <!-- Form Inside the Card -->
         <form action="{{ route('about.update', $about->id) }}" method="POST">
             @csrf
             @method('PUT')
 
             <!-- Card Content: Split Into Left and Right Sections -->
             <div class="flex space-x-8">
+                
                 <!-- Left Section (Details) -->
                 <div class="w-1/2">
                     <div class="mb-4">
@@ -27,11 +32,6 @@
                     <div class="mb-4">
                         <label for="umur" class="block text-sm font-medium text-gray-700">Umur</label>
                         <input type="number" name="umur" id="umur" value="{{ old('umur', $about->umur) }}" required class="border p-2 w-full rounded-md">
-                    </div>
-
-                    <div class="mb-4">
-                        <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
-                        <input type="text" name="alamat" id="alamat" value="{{ old('alamat', $about->alamat) }}" required class="border p-2 w-full rounded-md">
                     </div>
                 </div>
 
@@ -51,12 +51,18 @@
                         <label for="no_telp" class="block text-sm font-medium text-gray-700">No. Telp</label>
                         <input type="text" name="no_telp" id="no_telp" value="{{ old('no_telp', $about->no_telp) }}" required class="border p-2 w-full rounded-md">
                     </div>
+
+                    <div class="mb-4">
+                        <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
+                        <input type="text" name="alamat" id="alamat" value="{{ old('alamat', $about->alamat) }}" required class="border p-2 w-full rounded-md">
+                    </div>
                 </div>
             </div>
 
             <!-- Update Button -->
-            <div class="mt-6">
-                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-700">Update</button>
+            <div class="mt-8 text-right space-x-2">  
+                <button type="submit" class="bg-blue-400 hover:bg-blue-600 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200">Update</button>
+                <a href="{{ route('about.index') }}" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-600 hover:-translate-y-1 duration-200">Batal</a>
             </div>
         </form>
     </div>

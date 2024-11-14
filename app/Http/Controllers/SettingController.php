@@ -16,7 +16,7 @@ class SettingController extends Controller
         
         return view('dashboard-admin.setting', compact('user'));
     }
-
+    
     public function update(Request $request)
     {
         // Validasi data yang dimasukkan
@@ -25,23 +25,24 @@ class SettingController extends Controller
             'email' => 'required|email|max:255|unique:users,email,' . Auth::id(),
             'password' => 'nullable|confirmed|min:6',
         ]);
-
+    
         // Ambil data user yang sedang login
         $user = Auth::user();
-
+    
         // Update nama dan email
         $user->name = $request->name;
         $user->email = $request->email;
-
+    
         // Jika password diisi, update password
         if ($request->filled('password')) {
             $user->password = Hash::make($request->password);
         }
-
+    
         // Simpan perubahan
         $user->save();
-
+    
         // Redirect dengan pesan sukses
-        return redirect()->route('settings')->with('success', 'Pengaturan berhasil diperbarui.');
+        return redirect()->route('dashboard')->with('success', 'Pengaturan berhasil diperbarui.');
     }
+    
 }

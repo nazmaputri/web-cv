@@ -1,16 +1,14 @@
 @extends('layouts.dashboard-admin')
 
-@section('title', 'Tambah Keterampilan')
-
 @section('content')
-<div class="container mx-auto px-4 py-6">
+<div class="max-w-3xl shadow-md mx-auto bg-white p-6 rounded text-sm">
     <h1 class="text-2xl font-bold mb-6">Tambah Keterampilan</h1>
 
     <form action="{{ route('skill.store') }}" method="POST">
         @csrf
         <div class="mb-4">
             <label for="skill" class="block text-gray-700">Nama Keterampilan:</label>
-            <input type="text" name="skill" id="skill" class="w-full border-gray-300 rounded mt-2 p-2" required>
+            <input type="text" name="skill" id="skill" class="w-full border-gray-300 border rounded mt-2 p-2" required>
         </div>
 
         <div class="mb-4">

@@ -13,7 +13,7 @@
         </div>
         <div class="mb-4">
             <label for="persentase_bar" class="block text-gray-700">Persentase:</label>
-            <input type="number" name="persentase_bar" id="persentase_bar" value="{{ $language->persentase_bar }}" class="w-full p-2 border rounded" min="0" max="100" required>
+            <input type="number" name="persentase_bar" id="persentase_bar" value="{{ $language->persentase_bar }}" class="w-full p-2 border rounded" min="0" max="100">
         </div>
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
         <a href="{{ route('languages.index') }}" class="text-gray-500 ml-2">Batal</a>

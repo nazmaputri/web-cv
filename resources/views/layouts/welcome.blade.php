@@ -54,10 +54,51 @@
             .clip-path-custom {
                   clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 50%);
             }
+            .typing {
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 0;
+                animation: typing 5s steps(30) 1s infinite, blink-caret 0.75s step-end infinite;
+            }
+
+        @keyframes typing {
+            from {
+            width: 0;
+            }
+            to {
+            width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            50% {
+            border-color: transparent;
+            }
+        }
+
+        .bg-change {
+    background: linear-gradient(to right, #67e8f9, #38bdf8);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
             /* bg-gray-200 */
         </style>
     </head>
-    <body class="bg-sky-300 h-screen md:py-8 md:flex items-center justify-center text-sm font-outfit">
+    <body class="bg-change to-blue-300 h-screen md:py-8 md:flex items-center justify-center text-sm font-outfit">
         <div class="max-w-6xl w-full h-full  mx-auto flex flex-col md:flex-row space-x-0 md:space-x-4">
             
             <x-navbar></x-navbar>

@@ -11,6 +11,7 @@ use App\Http\Controllers\SkillController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\CVController;
 use App\Http\Controllers\SettingController;
 
 //Landing Page
@@ -28,7 +29,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/settings', [SettingController::class, 'show'])->name('settings');
     Route::post('/settings', [SettingController::class, 'update']);
 });
- 
+
+Route::get('/download-cv', [CVController::class, 'downloadCV'])->name('download.cv');
+
 //Dashboard
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::resource('profile', ProfileController::class);

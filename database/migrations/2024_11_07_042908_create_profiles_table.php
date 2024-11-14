@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
             $table->string('foto')->nullable(); 
             $table->string('nama'); 
-            $table->string('pekerjaan'); 
-            $table->string('medsos')->nullable(); 
-            $table->string('cv_path')->nullable(); 
+            $table->string('pekerjaan')->nullable(); 
+            $table->string('whatsapp')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('linkedin')->nullable(); 
             $table->timestamps();
         });
     }

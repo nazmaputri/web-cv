@@ -8,9 +8,9 @@
         {{-- name & button --}}
         <div class="w-full text-center md:py-2 py-8">
             <div class="space-y-3 py-2">
-                <div class="">
+                <div class="text-center">
                     <h1 class="text-3xl font-bold text-gray-800"> {{ $profileItem->nama }}</h1>
-                    <p class="text-sky-700 font-medium italic"> {{ $profileItem->pekerjaan }}</p>
+                    <p class="typing text-sky-700 font-medium italic"> {{ $profileItem->pekerjaan }}</p>
                 </div>
                 <div class="flex justify-center space-x-4">
                     <a href="#" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300"><i class="fab fa-facebook fa-lg"></i></a>
@@ -23,18 +23,15 @@
         </div>
         <div class="flex border-t border-gray-300 text-xs">
             <!-- Tombol Unduh CV -->
-            @if($profileItem->cv_path) <!-- Cek jika CV ada -->
-                <a href="{{ asset('storage/cvs/' . $profileItem->cv_path) }}" target="_blank" class="flex-1 py-4 text-gray-700 font-semibold hover:bg-gray-100 text-center border-r border-gray-200 duration-300">
-                    DOWNLOAD CV <i class="fas fa-download ml-2"></i>
-                </a>
-            @else
-                <button class="flex-1 py-4 text-gray-700 font-semibold text-center border-r border-gray-200 duration-300" disabled>
-                    No CV Available
-                </button>
-            @endif
+            <a href="{{ route('download.cv') }} target="_blank" class="flex-1 py-4 text-gray-700 hover:text-sky-700 font-semibold hover:bg-gray-100 text-center border-r border-gray-200 hover:-translate-y-1 duration-300">
+                DOWNLOAD CV <i class="fas fa-download ml-2"></i>
+            </a>
+            <a href="{{ route('download.cv') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Unduh CV</a>
 
+
+            
             <!-- Tombol Kontak -->
-            <button class="flex-1 py-4 text-gray-700 font-semibold hover:bg-gray-100 text-center border-l border-gray-200 duration-300">
+            <button class="flex-1 py-4 text-gray-700 hover:text-sky-700 font-semibold hover:bg-gray-100 hover:-translate-y-1 text-center border-l border-gray-200 duration-300">
                 CONTACT ME <i class="fas fa-phone ml-2"></i>
             </button>
         </div>                     

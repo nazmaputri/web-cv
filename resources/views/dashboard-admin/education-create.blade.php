@@ -1,35 +1,37 @@
 @extends('layouts.dashboard-admin')
 
-@section('title', 'Tambah Pendidikan')
-
 @section('content')
-<div class="container mx-auto mt-5">
+<div class="max-w-3xl bg-white mx-auto p-6 shadow-md rounded-md">
     <h2 class="text-2xl font-bold mb-4">Tambah Pendidikan</h2>
 
-    <form action="{{ route('education.store') }}" method="POST">
+    <form action="{{ route('education.store') }}" method="POST" class="space-y-4 my-5">
         @csrf
-        <div class="mb-4">
+        <div class="">
             <label for="universitas" class="block text-sm font-medium text-gray-700">Universitas</label>
-            <input type="text" name="universitas" id="universitas" class="mt-1 block w-full border rounded py-2 px-3" required>
+            <input type="text" name="universitas" id="universitas" class="mt-1 block w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:ring-cyan-200" required>
         </div>
 
-        <div class="mb-4">
-            <label for="tahun_mulai" class="block text-sm font-medium text-gray-700">Tahun Mulai</label>
-            <input type="number" name="tahun_mulai" id="tahun_mulai" class="mt-1 block w-full border rounded py-2 px-3">
+        <div class="flex space-x-3 w-full">
+            <div class="w-full">
+                <label for="tahun_mulai" class="block text-sm font-medium text-gray-700">Tahun Mulai</label>
+                <input type="number" name="tahun_mulai" id="tahun_mulai" class="mt-1 block w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:ring-cyan-200">
+            </div>
+    
+            <div class="w-full">
+                <label for="tahun_akhir" class="block text-sm font-medium text-gray-700">Tahun Akhir</label>
+                <input type="text" name="tahun_akhir" id="tahun_akhir" class="mt-1 block w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:ring-cyan-200">
+            </div>
         </div>
 
-        <div class="mb-4">
-            <label for="tahun_akhir" class="block text-sm font-medium text-gray-700">Tahun Akhir</label>
-            <input type="text" name="tahun_akhir" id="tahun_akhir" class="mt-1 block w-full border rounded py-2 px-3">
-        </div>
-
-        <div class="mb-4">
+        <div class="">
             <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-            <textarea name="deskripsi" id="deskripsi" class="mt-1 block w-full border rounded py-2 px-3"></textarea>
+            <textarea name="deskripsi" id="deskripsi" class="mt-1 block w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:ring-cyan-200"></textarea>
         </div>
 
-        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Simpan</button>
-        <a href="{{ route('education.index') }}" class="ml-2 text-gray-700">Batal</a>
+        <div class="ml-auto text-end mt-8 space-x-2">   
+            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200">Tambah</button>
+            <a href="{{ route('education.index') }}" class="ml-2 text-gray-700 px-4 py-2 rounded hover:bg-gray-200">Batal</a>
+        </div>
     </form>
 </div>
 @endsection
