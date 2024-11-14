@@ -28,7 +28,8 @@
                 @enderror
             </div>
             <!-- Login Button -->
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-center space-x-3">
+                <a href="{{ route('about') }}" class="bg-gray-400 text-white font-bold px-4 py-2 rounded hover:bg-gray-600 hover:-translate-y-1 duration-200">Batal</a>
                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Login
                 </button>

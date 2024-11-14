@@ -17,7 +17,7 @@
             <textarea name="deskripsi" id="deskripsi" class="mt-1 block w-full border rounded py-2 px-3">{{ $skill->deskripsi }}</textarea>
         </div>
 
-        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Perbarui</button>
+        <button type="submit" class="bg-blue-400 text-white px-4 py-2 rounded">Update</button>
     </form>
 </div>
 @endsection

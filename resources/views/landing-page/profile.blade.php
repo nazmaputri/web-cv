@@ -23,12 +23,9 @@
         </div>
         <div class="flex border-t border-gray-300 text-xs">
             <!-- Tombol Unduh CV -->
-            <a href="{{ route('download.cv') }} target="_blank" class="flex-1 py-4 text-gray-700 hover:text-sky-700 font-semibold hover:bg-gray-100 text-center border-r border-gray-200 hover:-translate-y-1 duration-300">
+            <a href="{{ route('download.cv') }}"" class="flex-1 py-4 text-gray-700 hover:text-sky-700 font-semibold hover:bg-gray-100 text-center border-r border-gray-200 hover:-translate-y-1 duration-300">
                 DOWNLOAD CV <i class="fas fa-download ml-2"></i>
             </a>
-            <a href="{{ route('download.cv') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Unduh CV</a>
-
-
             
             <!-- Tombol Kontak -->
             <button class="flex-1 py-4 text-gray-700 hover:text-sky-700 font-semibold hover:bg-gray-100 hover:-translate-y-1 text-center border-l border-gray-200 duration-300">
