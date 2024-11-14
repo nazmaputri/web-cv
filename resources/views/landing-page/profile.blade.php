@@ -12,15 +12,35 @@
                     <h1 class="text-3xl font-bold text-gray-800"> {{ $profileItem->nama }}</h1>
                     <p class="typing text-sky-700 font-medium italic"> {{ $profileItem->pekerjaan }}</p>
                 </div>
-                <div class="flex justify-center space-x-4">
-                    <a href="#" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-green-600 hover:scale-110 duration-300"><i class="fab fa-whatsapp fa-lg"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-red-600 hover:scale-110 duration-300"><i class="fab fa-youtube fa-lg"></i></a>
+                    <div class="flex justify-center space-x-4">
+                        @if ($profileItem->facebook)
+                            <a href="{{ $profileItem->facebook }}" target="_blank" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300">
+                                <i class="fab fa-facebook fa-lg"></i>
+                            </a>
+                        @endif
+                        @if ($profileItem->linkedin)
+                            <a href="{{ $profileItem->linkedin }}" target="_blank" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300">
+                                <i class="fab fa-linkedin fa-lg"></i>
+                            </a>
+                        @endif
+                        @if ($profileItem->whatsapp)
+                            <a href="{{ $profileItem->whatsapp }}" target="_blank" class="text-gray-600 hover:text-green-600 hover:scale-110 duration-300">
+                                <i class="fab fa-whatsapp fa-lg"></i>
+                            </a>
+                        @endif
+                        @if ($profileItem->twitter)
+                            <a href="{{ $profileItem->twitter }}" target="_blank" class="text-gray-600 hover:text-blue-600 hover:scale-110 duration-300">
+                                <i class="fab fa-twitter fa-lg"></i>
+                            </a>
+                        @endif
+                        @if ($profileItem->youtube)
+                            <a href="{{ $profileItem->youtube }}" target="_blank" class="text-gray-600 hover:text-red-600 hover:scale-110 duration-300">
+                                <i class="fab fa-youtube fa-lg"></i>
+                            </a>
+                        @endif
+                    </div>              
                 </div>
             </div>
-        </div>
         <div class="flex border-t border-gray-300 text-xs">
             <!-- Tombol Unduh CV -->
             <a href="{{ route('download.cv') }}"" class="flex-1 py-4 text-gray-700 hover:text-sky-700 font-semibold hover:bg-gray-100 text-center border-r border-gray-200 hover:-translate-y-1 duration-300">
