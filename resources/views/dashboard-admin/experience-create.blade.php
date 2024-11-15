@@ -1,10 +1,8 @@
 @extends('layouts.dashboard-admin')
 
-@section('title', 'Tambah Experience')
-
 @section('content')
 <div class="max-w-4xl bg-white mx-auto p-6 rounded shadow-md mt-5">
-    <h2 class="text-xl font-bold mb-6">Tambah Experience</h2>
+    <h2 class="text-xl font-bold mb-6 border-b-2 pb-2">Tambah Experience</h2>
 
     <form action="{{ route('experience.store') }}" method="POST" class="space-y-3">
         @csrf
@@ -36,9 +34,9 @@
             </textarea>
         </div>
 
-        <div class="pt-6">
-            <button type="submit" class="bg-green-500 hover:bg-green-600 hover:-translate-y-1 duration-200 text-white px-4 py-2 rounded">Tambah</button>
-            <a href="{{ route('experience.index') }}" class="ml-2  px-4 py-2 rounded hover:bg-gray-100 text-gray-700">Batal</a>
+        <div class="ml-auto text-end mt-8 space-x-2">  
+            <button type="submit" class="bg-blue-400 hover:bg-blue-600 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200">Tambah</button>
+            <a href="{{ route('experience.index') }}" class="ml-2 bg-gray-400 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200 hover:bg-gray-600">Batal</a>
         </div>
     </form>
 </div>

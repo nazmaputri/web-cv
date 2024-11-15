@@ -17,16 +17,16 @@
                 <h2 class="font-semibold">{{ $certificate->judul }}</h2>
                 <p>Nomor Sertifikat : {{ $certificate->nomor_sertifikat }}</p>
                 @if($certificate->foto)
-                    <img src="{{ asset('storage/' . $certificate->foto) }}" alt="Certificate Image" class="w-32 h-32 object-cover mt-2">
+                    <img src="{{ asset('storage/' . $certificate->foto) }}" alt="Certificate Image" class=" mt-2">
                 @endif
-                <div class="mt-4">
+                <div class="mt-4 flex justify-end space-x-2">
                     <a href="{{ route('certificates.edit', $certificate->id) }}" class="bg-blue-400 text-white px-4 py-2 rounded">Edit</a>
                     <form action="{{ route('certificates.destroy', $certificate->id) }}" method="POST" class="inline">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="bg-red-400 text-white px-4 py-2 rounded">Hapus</button>
                     </form>
-                </div>
+                </div>                
             </div>
         @endforeach
     </div>

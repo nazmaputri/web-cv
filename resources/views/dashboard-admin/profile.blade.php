@@ -25,7 +25,7 @@
                 
                 <!-- Foto Profil di Atas -->
                 <div class="w-full">
-                    <img src="{{ asset('storage/' . $profile->foto) }}" alt="Foto Profil" class="w-full h-auto object-cover">
+                    <img src="{{ asset('storage/' . $profile->foto . '?t=' . time()) }}" alt="Foto Profil" class="w-full h-auto object-cover">
                 </div>
     
                 <!-- Detail Profil di Bawah Foto -->

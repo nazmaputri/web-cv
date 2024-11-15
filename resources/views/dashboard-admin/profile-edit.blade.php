@@ -3,7 +3,7 @@
 @section('content')
     <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
         <!-- Judul -->
-        <h1 class="text-2xl font-bold mb-6 text-center">Edit Profile</h1>
+        <h1 class="text-2xl font-bold mb-6 text-center border-b-2 pb-2">Edit Profile</h1>
 
         @if ($errors->any())
             <div class="bg-red-500 text-white p-4 rounded-md mb-4">

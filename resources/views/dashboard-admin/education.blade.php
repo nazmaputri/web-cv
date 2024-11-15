@@ -36,14 +36,12 @@
                 <td class="px-4 py-2 border-x">{{ $education->deskripsi }}</td>
                 <td class="px-4 py-2 border-x text-center text-xs flex space-x-4 items-center justify-center">
                     <a href="{{ route('education.edit', $education->id) }}" class="bg-blue-400 p-2 rounded-md hover:shadow-none shadow-lg text-white flex hover:bg-blue-600">
-                        <i class="fa-solid fa-pen-to-square"></i>
                         <span>Edit</span>
                     </a>
                     <form action="{{ route('education.destroy', $education->id) }}" method="POST" class="inline-block">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="bg-red-400 p-2 rounded-md hover:shadow-none shadow-lg text-white flex items-center hover:bg-red-600">
-                            <i class="fa-regular fa-trash-can"></i>
                            <span>Hapus</span> 
                         </button>
                     </form>

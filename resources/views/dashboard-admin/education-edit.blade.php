@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="max-w-3xl bg-white mx-auto p-6 shadow-md rounded-md">
-    <h2 class="text-2xl font-bold mb-4">Edit Pendidikan</h2>
+    <h2 class="text-2xl font-bold mb-6 border-b-2 pb-2">Edit Pendidikan</h2>
 
     <form action="{{ route('education.update', $education->id) }}" method="POST" class="space-y-4 my-5">
         @csrf
@@ -31,8 +31,8 @@
         </div>
 
         <div class="ml-auto text-end mt-8 space-x-2">  
-            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200">Update</button>
-            <a href="{{ route('education.index') }}" class="ml-2 text-gray-700 px-4 py-2 rounded hover:bg-gray-200">Batal</a>
+            <button type="submit" class="bg-blue-400 hover:bg-blue-600 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200">Update</button>
+            <a href="{{ route('education.index') }}" class="ml-2 bg-gray-400 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200 hover:bg-gray-600">Batal</a>
         </div>
     </form>
 </div>

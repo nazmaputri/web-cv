@@ -5,11 +5,11 @@
     <h1 class="text-2xl font-bold mb-6 border-b-2 pb-2">Daftar Keterampilan</h1>
     
     <!-- Tombol Tambah Keterampilan -->
-    <a href="{{ route('skill.create') }}" class="bg-cyan-400 hover:bg-cyan-600 text-white text-sm px-4 py-2 mb-4 inline-block rounded">Tambah Keterampilan</a>
+    <a href="{{ route('skill.create') }}" class="bg-cyan-400 hover:bg-cyan-600 text-white text-sm px-4 py-2 mb-3 inline-block rounded">Tambah Keterampilan</a>
 
     <!-- Success Message -->
     @if (session('success'))
-    <div class="text-green-500 mb-4 mt-6">
+    <div class="text-green-500 mb-4 mt-4">
         {{ session('success') }}
     </div>
   @endif

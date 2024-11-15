@@ -1,10 +1,8 @@
 @extends('layouts.dashboard-admin')
 
-@section('title', 'Edit Experience')
-
 @section('content')
 <div class="max-w-4xl bg-white mx-auto p-6 rounded shadow-md mt-5">
-    <h2 class="text-xl font-bold mb-6">Edit Pengalaman Pekerjaan</h2>
+    <h2 class="text-xl font-bold mb-6 border-b-2 pb-2">Edit Pengalaman Pekerjaan</h2>
 
     <form action="{{ route('experience.update', $experience->id) }}" method="POST" class="space-y-3">
         @csrf
@@ -41,7 +39,6 @@
             <button type="submit" class="bg-blue-400 hover:bg-blue-600 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200">Update</button>
             <a href="{{ route('experience.index') }}" class="ml-2 bg-gray-400 text-white px-4 py-2 rounded hover:-translate-y-1 duration-200 hover:bg-gray-600">Batal</a>
         </div>
-
     </form>
 </div>
 @endsection

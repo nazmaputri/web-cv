@@ -69,7 +69,7 @@
                         <span class="flex-1 group-hover:translate-x-1 duration-300 whitespace-nowrap">Tentang</span>
                     </a>
                 </li>
-                <li class="relative" x-data="{ dropdownOpen: false }">
+                <li class="relative" x-data="{ dropdownOpen: {{ Request::routeIs('experience.index', 'education.index', 'skill.index') ? 'true' : 'false' }} }">
                     <button @click="dropdownOpen = !dropdownOpen" class="flex space-x-5 items-center px-4 py-3 rounded-md w-full text-gray-700 hover:bg-gray-100 group">
                         <!-- Resume Icon -->
                         <i class="fa-regular fa-folder-open group-hover:scale-105 duration-300 text-lg"></i>
@@ -78,32 +78,34 @@
                         <svg :class="{'rotate-180': dropdownOpen}" class="ml-auto w-4 h-4 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                             <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/>
                         </svg>
-                    </button>    
-                        <!-- Dropdown Menu -->
-                        <ul x-show="dropdownOpen" @click.away="dropdownOpen = false" class="items-center space-y-3 px-4 py-3 rounded-md w-full">
-                            <li class="{{ Request::routeIs('experience.index') }}">
-                                <a href="{{ route('experience.index') }}" class="flex space-x-5 items-center px-4 py-3 rounded-lg group {{ Request::is('experience') ? 'bg-sky-500 text-white font-semibold hover:bg-sky-600' : 'text-gray-600 hover:bg-gray-100' }}">
-                                    <!-- Experience Icon -->
-                                    <i class="fa-solid fa-briefcase group-hover:scale-105 duration-300 text-lg"></i>
-                                    <span class="group-hover:translate-x-1 duration-300">Pekerjaan</span>
-                                </a>
-                            </li>
-                            <li  class="{{ Request::routeIs('education.index') }}">
-                                <a href="{{ route('education.index') }}" class="flex space-x-5 items-center px-4 py-3 rounded-lg group {{ Request::is('education') ? 'bg-sky-500 text-white font-semibold hover:bg-sky-600' : 'text-gray-600 hover:bg-gray-100' }}">
-                                    <!-- Education Icon -->
-                                    <i class="fa-solid fa-school group-hover:scale-105 duration-300 text-lg"></i>
-                                    <span class="group-hover:translate-x-1 duration-300">Pendidikan</span>
-                                </a>
-                            </li>
-                            <li class="{{ Request::routeIs('skill.index') }}">
-                                <a href="{{ route('skill.index')  }}" class="flex space-x-5 items-center px-4 py-3 rounded-lg group {{ Request::is('skill') ? 'bg-sky-500 text-white font-semibold hover:bg-sky-600' : 'text-gray-600 hover:bg-gray-100' }}">
-                                    <!-- Skill Icon -->
-                                    <i class="fa-solid fa-wand-magic-sparkles group-hover:scale-105 duration-300 text-lg"></i>
-                                    <span class="group-hover:translate-x-1 duration-300">Keterampilan</span>
-                                </a>
-                            </li>                   
-                        </ul>
+                    </button>
+                    
+                    <!-- Dropdown Menu -->
+                    <ul x-show="dropdownOpen" @click.away="dropdownOpen = false" class="items-center space-y-3 px-4 py-3 rounded-md w-full">
+                        <li class="{{ Request::routeIs('experience.index') ? 'bg-sky-500 text-white font-semibold rounded-lg' : '' }}">
+                            <a href="{{ route('experience.index') }}" class="flex space-x-5 items-center px-4 py-3 rounded-lg group {{ Request::is('experience') ? 'bg-sky-500 text-white font-semibold hover:bg-sky-600' : 'text-gray-600 hover:bg-gray-100' }}">
+                                <!-- Experience Icon -->
+                                <i class="fa-solid fa-briefcase group-hover:scale-105 duration-300 text-lg"></i>
+                                <span class="group-hover:translate-x-1 duration-300">Pekerjaan</span>
+                            </a>
+                        </li>
+                        <li class="{{ Request::routeIs('education.index') ? 'bg-sky-500 text-white font-semibold rounded-lg' : '' }}">
+                            <a href="{{ route('education.index') }}" class="flex space-x-5 items-center px-4 py-3 rounded-lg group {{ Request::is('education') ? 'bg-sky-500 text-white font-semibold hover:bg-sky-600' : 'text-gray-600 hover:bg-gray-100' }}">
+                                <!-- Education Icon -->
+                                <i class="fa-solid fa-school group-hover:scale-105 duration-300 text-lg"></i>
+                                <span class="group-hover:translate-x-1 duration-300">Pendidikan</span>
+                            </a>
+                        </li>
+                        <li class="{{ Request::routeIs('skill.index') ? 'bg-sky-500 text-white font-semibold rounded-lg' : '' }}">
+                            <a href="{{ route('skill.index') }}" class="flex space-x-5 items-center px-4 py-3 rounded-lg group {{ Request::is('skill') ? 'bg-sky-500 text-white font-semibold hover:bg-sky-600' : 'text-gray-600 hover:bg-gray-100' }}">
+                                <!-- Skill Icon -->
+                                <i class="fa-solid fa-wand-magic-sparkles group-hover:scale-105 duration-300 text-lg"></i>
+                                <span class="group-hover:translate-x-1 duration-300">Keterampilan</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+                
                 <li>
                     <a href="{{ route('certificates.index') }}" class="flex space-x-5 items-center px-4 py-3 rounded-lg group {{ Request::is('certificates') ? 'bg-sky-500 text-white font-semibold hover:bg-sky-600' : 'text-gray-600 hover:bg-gray-100' }}">
                         <i class="fa-solid fa-award group-hover:scale-105 duration-300 text-lg"></i>

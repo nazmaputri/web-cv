@@ -55,33 +55,26 @@ class CertificateController extends Controller
         $validated = $request->validate([
             'judul' => 'required|string|max:255',
             'nomor_sertifikat' => 'required|string|max:255',
-            'foto' => 'nullable|array', // Memastikan foto bisa kosong atau array
-            'foto.*' => 'image|mimes:jpg,jpeg,png,gif|max:2048', // Validasi setiap file yang di-upload
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048', // Validasi hanya untuk satu file
         ]);
     
-        // Proses gambar yang di-upload
-        $fotoPaths = [];
-    
+        // Proses update gambar
         if ($request->hasFile('foto')) {
-            foreach ($request->file('foto') as $file) {
-                // Simpan file dan dapatkan path-nya
-                $fotoPaths[] = $file->store('certificates', 'public');
+            // Hapus gambar lama jika ada
+            if ($certificate->foto) {
+                Storage::disk('public')->delete($certificate->foto);
             }
+            // Simpan gambar baru dan dapatkan path-nya
+            $certificate->foto = $request->file('foto')->store('certificates', 'public');
         }
     
-        // Simpan data sertifikat
+        // Update data sertifikat
         $certificate->judul = $validated['judul'];
         $certificate->nomor_sertifikat = $validated['nomor_sertifikat'];
-    
-        // Simpan path gambar ke dalam database sebagai JSON
-        if (!empty($fotoPaths)) {
-            $certificate->foto = json_encode($fotoPaths);
-        }
-    
         $certificate->save();
     
         return redirect()->route('certificates.index')->with('success', 'Sertifikat berhasil diperbarui');
-    }
+    }    
     
 
     public function destroy($id)
