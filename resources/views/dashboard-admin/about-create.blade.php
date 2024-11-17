@@ -25,13 +25,23 @@
             </div>
 
             <div class="mb-4">
-                <label for="alamat" class="block text-sm font-semibold text-gray-700">Alamat</label>
+                <label for="alamat" class="block text-sm font-semibold text-gray-700">Alamat Lengkap</label>
                 <input type="text" id="alamat" name="alamat" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
             <div class="mb-4">
                 <label for="negara" class="block text-sm font-semibold text-gray-700">Negara</label>
                 <input type="text" id="negara" name="negara" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div class="mb-4">
+                <label for="provinsi" class="block text-sm font-semibold text-gray-700">Provinsi</label>
+                <input type="text" id="provinsi" name="provinsi" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div class="mb-4">
+                <label for="kota" class="block text-sm font-semibold text-gray-700">Kota</label>
+                <input type="text" id="kota" name="kota" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
             <div class="mb-4">

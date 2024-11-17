@@ -15,6 +15,7 @@
             <div data-aos="fade-right" data-aos-delay="300" data-aos-duration="1500" class="w-1/5 h-1 text-start bg-sky-800 rounded-2xl"></div>
         </div>
     <div class="flex flex-col lg:flex-row space-y-6 lg:space-x-6">
+        @foreach ($about as $about)
         <!-- Left Section: Introduction -->
         <div class="flex-1">
             <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500" class="text-xl font-semibold text-gray-800 mb-2">{{ $about->judul }}</p>
@@ -38,9 +39,10 @@
             </div>
             <div class="flex pb-1 justify-between items-center border-b border-gray-300">
                 <span class="font-medium bg-sky-700 text-white px-3 py-1 rounded-md">Address:</span>
-                <span class="text-gray-800">{{ Str::before(Str::afterLast($about->alamat, 'Cibungbulang '), ', Indonesia') }}</span>
+                <span class="text-gray-800">{{ $about->provinsi }}, {{ $about->kota }}</span>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 <!-- END SECTION ABOUT ME -->

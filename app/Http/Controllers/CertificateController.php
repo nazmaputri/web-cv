@@ -55,7 +55,7 @@ class CertificateController extends Controller
         $validated = $request->validate([
             'judul' => 'required|string|max:255',
             'nomor_sertifikat' => 'required|string|max:255',
-            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048', // Validasi hanya untuk satu file
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048', 
         ]);
     
         // Proses update gambar
@@ -73,7 +73,7 @@ class CertificateController extends Controller
         $certificate->nomor_sertifikat = $validated['nomor_sertifikat'];
         $certificate->save();
     
-        return redirect()->route('certificates.index')->with('success', 'Sertifikat berhasil diperbarui');
+        return redirect()->route('certificates.index')->with('success', 'Sertifikat berhasil diperbarui!');
     }    
     
 
@@ -85,6 +85,6 @@ class CertificateController extends Controller
         }
         $certificate->delete();
 
-        return redirect()->route('certificates.index')->with('success', 'Certificate deleted successfully');
+        return redirect()->route('certificates.index')->with('success', 'Sertifikat berhasil dihapus!');
     }
 }

@@ -18,14 +18,11 @@ class LandingPageController extends Controller
     {
     
         $profile = Profile::all();
-        $about = About::first();
+        $about = About::all();
+        $experience = Experience::first();
 
-        $address = $about->alamat;
-        $city = Str::before(Str::afterLast($address, "Cibungbulang"), "Indonesia");
-
-        return view('landing-page.about', compact('profile', 'about', 'city'));
+        return view('landing-page.about', compact('profile', 'about', 'experience'));
     }
-    
 
     public function resume()
     {
@@ -42,16 +39,18 @@ class LandingPageController extends Controller
     {
         $profile = Profile::all();
         $certificate = Certificate::all();
+        $experience = Experience::skip(1)->first();
 
-        return view('landing-page.certificate', compact('profile', 'certificate'));
+        return view('landing-page.certificate', compact('profile', 'experience', 'certificate'));
     }
 
     public function contact()
     {
         $about = About::all();
         $profile = Profile::all();
+        $experience = Experience::first();
 
-        return view('landing-page.contact', compact('profile', 'about'));
+        return view('landing-page.contact', compact('profile', 'experience', 'about'));
     }
 
 }

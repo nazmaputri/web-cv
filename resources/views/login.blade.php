@@ -10,7 +10,7 @@
     <div class="w-full max-w-md">
         <form action="{{ route('login') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             @csrf
-            <h2 class="text-center text-2xl font-bold mb-6">Login</h2>
+            <h2 class="text-center text-2xl font-bold mb-6 border-b-2 pb-2">Login</h2>
             <!-- Email Field -->
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
@@ -28,9 +28,9 @@
                 @enderror
             </div>
             <!-- Login Button -->
-            <div class="flex items-center justify-center space-x-3">
-                <a href="{{ route('about') }}" class="bg-gray-400 text-white font-bold px-4 py-2 rounded hover:bg-gray-600 hover:-translate-y-1 duration-200">Batal</a>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <div class="flex text-end items-end justify-end space-x-3">
+                <a href="{{ route('about') }}" class="bg-gray-400 text-white font-bold  text-xs px-4 py-2 rounded hover:bg-gray-600 hover:-translate-y-1 duration-200">Kembali</a>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold  text-xs px-4 py-2 rounded focus:outline-none focus:shadow-outline">
                     Login
                 </button>
             </div>

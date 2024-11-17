@@ -78,22 +78,22 @@
         }
 
         .bg-change {
-    background: linear-gradient(to right, #67e8f9, #38bdf8);
-    background-size: 400% 400%;
-    animation: gradientShift 3s ease infinite;
-  }
+            background: linear-gradient(to right, #67e8f9, #38bdf8);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+        }
 
-  @keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+        @keyframes gradientShift {
+            0% {
+            background-position: 0% 50%;
+            }
+            50% {
+            background-position: 100% 50%;
+            }
+            100% {
+            background-position: 0% 50%;
+            }
+        }
 
             /* bg-gray-200 */
         </style>

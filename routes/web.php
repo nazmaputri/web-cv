@@ -20,27 +20,31 @@ Route::get('/lp-resume', [LandingPageController::class, 'resume'])->name('resume
 Route::get('/lp-certificate', [LandingPageController::class, 'certificate'])->name('certificate');
 Route::get('/lp-contact', [LandingPageController::class, 'contact'])->name('contact');
 
-//Login 
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class, 'login']);
+// Login dan Logout
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
+Route::post('login', [LoginController::class, 'login'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+
 Route::middleware(['auth'])->group(function () {
+    // Settings
     Route::get('/settings', [SettingController::class, 'show'])->name('settings');
     Route::post('/settings', [SettingController::class, 'update']);
+    
+    // Dashboard 
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('profile', ProfileController::class);
+    Route::resource('about', AboutController::class);
+    Route::resource('certificates', CertificateController::class);
+    Route::resource('education', EducationController::class);
+    Route::resource('experience', ExperienceController::class);
+    Route::resource('skill', SkillController::class);
+    Route::resource('languages', LanguageController::class);
 });
 
 Route::get('/download-cv', [CVController::class, 'downloadCV'])->name('download.cv');
 
-//Dashboard
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::resource('profile', ProfileController::class);
-Route::resource('about', AboutController::class);
-Route::resource('certificates', CertificateController::class);
-Route::resource('education', EducationController::class);
-Route::resource('experience', ExperienceController::class);
-Route::resource('skill', SkillController::class);
-Route::resource('languages', LanguageController::class);
+
 
 
 

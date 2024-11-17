@@ -23,7 +23,7 @@ class SettingController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email,' . Auth::id(),
-            'password' => 'nullable|confirmed|min:6',
+            'password' => 'nullable|confirmed|min:8',
         ]);
     
         // Ambil data user yang sedang login
@@ -42,7 +42,7 @@ class SettingController extends Controller
         $user->save();
     
         // Redirect dengan pesan sukses
-        return redirect()->route('dashboard')->with('success', 'Pengaturan berhasil diperbarui.');
+        return redirect()->route('dashboard')->with('success', 'Pengaturan berhasil diperbarui!');
     }
     
 }

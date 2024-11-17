@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('universitas');
             $table->year('tahun_mulai');
-            $table->string('tahun_akhir')->nullable();
+            $table->string('tahun_akhir')->nullable()->default('Present');
             $table->text('deskripsi')->nullable();
             $table->timestamps();
         });

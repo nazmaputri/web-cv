@@ -17,6 +17,8 @@ class About extends Model
         'umur',
         'alamat',
         'negara',
+        'kota',
+        'provinsi',
         'email',
         'no_telp',
     ];

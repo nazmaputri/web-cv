@@ -45,16 +45,35 @@
                 <!-- Tombol Edit dan Hapus di Bawah -->
                 <div class="flex justify-center space-x-3 p-3">
                     <a href="{{ route('profile.edit', $profile->id) }}" class="bg-blue-400 text-white py-1 px-3 rounded hover:bg-blue-600 text-sm">Edit</a>
-                    <form action="{{ route('profile.destroy', $profile->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus profile ini?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="bg-red-400 text-white py-1 px-3 rounded hover:bg-red-600 text-sm">Hapus</button>
-                    </form>
+                    <div x-data="{ popupDelete: false }">
+                        <!-- Tombol untuk membuka popup -->
+                        <button @click="popupDelete = true" class="bg-red-400 hover:bg-red-600 text-white text-sm px-3 py-1 rounded">
+                            <span>Hapus</span>
+                        </button>
+                    
+                        <!-- Popup Konfirmasi -->
+                        <div x-show="popupDelete" x-transition @click.away="popupDelete = false" class="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center px-4 z-50">
+                            <div class="bg-white p-6 rounded-lg shadow-lg w-full md:w-1/3">
+                                <h3 class="text-lg font-bold text-center mb-4">Konfirmasi Hapus</h3>
+                                <p class="text-center mb-6">Apakah Anda yakin ingin menghapus data Profil ini?</p>
+                                
+                                <div class="flex justify-evenly">
+                                    <!-- Tombol batal -->
+                                    <button @click="popupDelete = false" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400">Batal</button>
+                                
+                                    <!-- Form untuk menghapus data -->
+                                    <form action="{{ route('profile.destroy', $profile->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus profile ini?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="bg-red-400 text-white py-1 px-3 rounded hover:bg-red-600 text-sm">Hapus</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         @endforeach
     </div>
-    
-
     </div>
 @endsection

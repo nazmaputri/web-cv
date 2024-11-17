@@ -27,9 +27,15 @@ class EducationController extends Controller
             'deskripsi' => 'nullable|string',
         ]);
 
+         // Jika tahun_akhir null, ubah menjadi 'Present'
+        $data = $request->all();
+        if (is_null($data['tahun_akhir'])) {
+            $data['tahun_akhir'] = 'Present';
+        }
+
         Education::create($request->all());
 
-        return redirect()->route('education.index')->with('success', 'Data pendidikan berhasil ditambahkan.');
+        return redirect()->route('education.index')->with('success', 'Data pendidikan berhasil ditambahkan!');
     }
 
     public function edit(Education $education)
@@ -48,13 +54,13 @@ class EducationController extends Controller
 
         $education->update($request->all());
 
-        return redirect()->route('education.index')->with('success', 'Data pendidikan berhasil diperbarui.');
+        return redirect()->route('education.index')->with('success', 'Data pendidikan berhasil diperbarui!');
     }
 
     public function destroy(Education $education)
     {
         $education->delete();
 
-        return redirect()->route('education.index')->with('success', 'Data pendidikan berhasil dihapus.');
+        return redirect()->route('education.index')->with('success', 'Data pendidikan berhasil dihapus!');
     }
 }

@@ -109,7 +109,7 @@
                 <li>
                     <a href="{{ route('certificates.index') }}" class="flex space-x-5 items-center px-4 py-3 rounded-lg group {{ Request::is('certificates') ? 'bg-sky-500 text-white font-semibold hover:bg-sky-600' : 'text-gray-600 hover:bg-gray-100' }}">
                         <i class="fa-solid fa-award group-hover:scale-105 duration-300 text-lg"></i>
-                    <span class="flex-1 group-hover:translate-x-1 duration-300 whitespace-nowrap">Sertifikat</span>
+                    <span class="flex-1 group-hover:translate-x-1 duration-300">Sertifikat</span>
                     </a>
                 </li>
             </ul>
@@ -257,7 +257,7 @@
 </script>
 
 <!-- Main Content -->
-    <main class="flex-1 p-6 overflow-auto">
+    <main class="flex-1 p-6 md:overflow-y-scroll">
          @yield('content')
     </main>
 

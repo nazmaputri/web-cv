@@ -35,30 +35,32 @@
         @endforeach
 
         {{-- Form Contact --}}
-        <form action="#" method="POST" class="py-8 px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Nama Lengkap -->
-                <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500" class="flex flex-col">
-                    <label for="full-name" class="text-gray-700 font-medium mb-2">Nama Lengkap</label>
-                    <input type="text" id="full-name" name="full_name" class="p-2 border outline-none rounded-lg focus:border-sky-700 focus:ring-1 focus:ring-sky-700" required placeholder="Masukkan nama lengkap">
+        <div  data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500" class="">
+            <form action="#" method="POST" class="py-8 px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Nama Lengkap -->
+                    <div class="flex flex-col">
+                        <label for="full-name" class="text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                        <input type="text" id="full-name" name="full_name" class="p-2 border outline-none rounded-lg focus:border-sky-700 focus:ring-1 focus:ring-sky-700" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <!-- Alamat Email -->
+                    <div class="flex flex-col">
+                        <label for="email" class="text-gray-700 font-medium mb-2">Alamat Email</label>
+                        <input type="email" id="email" name="email" class="p-2 border outline-none rounded-lg focus:border-sky-700 focus:ring-1 focus:ring-sky-700" required placeholder="Masukkan alamat email">
+                    </div>
                 </div>
-                <!-- Alamat Email -->
-                <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500" class="flex flex-col">
-                    <label for="email" class="text-gray-700 font-medium mb-2">Alamat Email</label>
-                    <input type="email" id="email" name="email" class="p-2 border outline-none rounded-lg focus:border-sky-700 focus:ring-1 focus:ring-sky-700" required placeholder="Masukkan alamat email">
+    
+                <!-- Pesan -->
+                <div class="flex flex-col mt-4">
+                    <label for="message" class="text-gray-700 font-medium mb-2">Pesan</label>
+                    <textarea id="message" name="message" class="p-2 border outline-none rounded-lg focus:border-sky-700 focus:ring-1 focus:ring-sky-700" rows="4" required placeholder="Masukkan pesan"></textarea>
                 </div>
-            </div>
-
-            <!-- Pesan -->
-            <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500" class="flex flex-col mt-4">
-                <label for="message" class="text-gray-700 font-medium mb-2">Pesan</label>
-                <textarea id="message" name="message" class="p-2 border outline-none rounded-lg focus:border-sky-700 focus:ring-1 focus:ring-sky-700" rows="4" required placeholder="Masukkan pesan"></textarea>
-            </div>
-
-            <!-- Tombol Kirim -->
-            <div class="mt-8 items-end justify-end text-end">
-                <button type="submit" class="bg-white font-semibold text-sky-800 px-6 py-2 border-2 border-sky-800 rounded-lg hover:text-white hover:bg-sky-800 hover:-translate-y-1 focus:outline-none duration-300">Kirim</button>
-            </div>
-        </form>
+    
+                <!-- Tombol Kirim -->
+                <div class="mt-8 items-end justify-end text-end">
+                    <button type="submit" class="bg-white font-semibold text-sky-800 px-6 py-2 border-2 border-sky-800 rounded-lg hover:text-white hover:bg-sky-800 hover:-translate-y-1 focus:outline-none duration-300">Kirim</button>
+                </div>
+            </form>
+        </div>
 
 @endsection

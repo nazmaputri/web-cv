@@ -20,7 +20,7 @@
     
             <div class="w-full">
                 <label for="tahun_akhir" class="block font-medium text-gray-700">Tahun Akhir</label>
-                <input type="text" name="tahun_akhir" id="tahun_akhir" value="{{ $experience->tahun_akhir }}" class="mt-1 block w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:ring-cyan-200">
+                <input type="text" name="tahun_akhir" id="tahun_akhir" value="{{ old('tahun_akhir', $experience->tahun_akhir ?? 'Present') }}" class="mt-1 block w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:ring-cyan-200">
             </div>
         </div>
 

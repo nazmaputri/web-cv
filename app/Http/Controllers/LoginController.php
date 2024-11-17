@@ -31,9 +31,12 @@ class LoginController extends Controller
     }
 
     // Proses logout
-    public function logout()
+    public function logout(Request $request)
     {
-        Auth::logout(); // Logout user
-        return redirect('/'); // Redirect ke halaman utama atau landing page
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken(); 
+        return redirect()->route('about'); 
     }
+
 }

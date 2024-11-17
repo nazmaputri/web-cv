@@ -17,6 +17,8 @@ class CreateAboutTable extends Migration
             $table->integer('umur');
             $table->string('alamat');
             $table->string('negara');
+            $table->string('provinsi')->nullable();
+            $table->string('kota')->nullable(); 
             $table->string('email')->unique();
             $table->string('no_telp');
             $table->timestamps();

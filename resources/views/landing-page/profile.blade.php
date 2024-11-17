@@ -10,7 +10,7 @@
             <div class="space-y-3 py-2">
                 <div class="text-center">
                     <h1 class="text-3xl font-bold text-gray-800"> {{ $profileItem->nama }}</h1>
-                    <p class="typing text-sky-700 font-medium italic"> {{ $profileItem->pekerjaan }}</p>
+                    <p class="typing text-sky-700 font-medium italic"> {{ $experience->pekerjaan }}</p>
                 </div>
                 <div class="flex justify-center space-x-4">
                     <!-- Facebook -->

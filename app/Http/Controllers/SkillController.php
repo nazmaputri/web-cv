@@ -29,7 +29,7 @@ class SkillController extends Controller
 
         Skill::create($request->all());
 
-        return redirect()->route('skill.index')->with('success', 'Keterampilan berhasil ditambahkan.');
+        return redirect()->route('skill.index')->with('success', 'Keterampilan berhasil ditambahkan!');
     }
 
     public function edit($id)
@@ -48,7 +48,7 @@ class SkillController extends Controller
         $skill = Skill::findOrFail($id);
         $skill->update($request->all());
 
-        return redirect()->route('skill.index')->with('success', 'Keterampilan berhasil diperbarui.');
+        return redirect()->route('skill.index')->with('success', 'Keterampilan berhasil diperbarui!');
     }
 
     public function destroy($id)
@@ -56,6 +56,6 @@ class SkillController extends Controller
         $skill = Skill::findOrFail($id);
         $skill->delete();
 
-        return redirect()->route('skill.index')->with('success', 'Keterampilan berhasil dihapus.');
+        return redirect()->route('skill.index')->with('success', 'Keterampilan berhasil dihapus!');
     }
 }

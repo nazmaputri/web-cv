@@ -29,13 +29,15 @@ class AboutController extends Controller
             'umur' => 'required|integer',
             'alamat' => 'required|string|max:255',
             'negara' => 'required|string|max:255',
+            'provinsi' => 'required|string',
+            'kota' => 'required|string',
             'email' => 'required|email|unique:about,email',
             'no_telp' => 'required|string|max:20',
         ]);
 
         About::create($request->all());
 
-        return redirect()->route('about.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('about.index')->with('success', 'Data About berhasil ditambahkan!');
     }
 
     // Tampilkan halaman form edit data About
@@ -53,13 +55,15 @@ class AboutController extends Controller
             'umur' => 'required|integer',
             'alamat' => 'required|string|max:255',
             'negara' => 'required|string|max:255',
+            'provinsi' => 'required|string',
+            'kota' => 'required|string',
             'email' => 'required|email|unique:about,email,' . $about->id,
             'no_telp' => 'required|string|max:20',
         ]);
 
         $about->update($request->all());
 
-        return redirect()->route('about.index')->with('success', 'Data berhasil diperbarui');
+        return redirect()->route('about.index')->with('success', 'Data About berhasil diperbarui!');
     }
 
     // Hapus data
@@ -67,6 +71,6 @@ class AboutController extends Controller
     {
         $about->delete();
 
-        return redirect()->route('about.index')->with('success', 'Data berhasil dihapus');
+        return redirect()->route('about.index')->with('success', 'Data About berhasil dihapus!');
     }
 }

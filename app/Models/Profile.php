@@ -19,4 +19,9 @@ use Illuminate\Database\Eloquent\Model;
         'cv_path'
     ];    
 
+    public function experience()
+    {
+        return $this->hasMany(Experience::class, 'profile_id', 'id');
+    }
+
 }

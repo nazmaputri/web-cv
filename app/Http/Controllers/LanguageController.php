@@ -27,7 +27,7 @@ class LanguageController extends Controller
 
         Language::create($request->all());
 
-        return redirect()->route('skill.index')->with('success', 'Bahasa berhasil ditambahkan.');
+        return redirect()->route('skill.index')->with('success', 'Keterampilan Bahasa berhasil ditambahkan!');
     }
 
     public function edit($id)
@@ -46,7 +46,7 @@ class LanguageController extends Controller
         $language = Language::findOrFail($id);
         $language->update($request->all());
 
-        return redirect()->route('skill.index')->with('success', 'Bahasa berhasil diperbarui.');
+        return redirect()->route('skill.index')->with('success', 'Keterampilan Bahasa berhasil diperbarui!');
     }
 
     public function destroy($id)
@@ -54,6 +54,6 @@ class LanguageController extends Controller
         $language = Language::findOrFail($id);
         $language->delete();
 
-        return redirect()->route('skill.index')->with('success', 'Bahasa berhasil dihapus.');
+        return redirect()->route('skill.index')->with('success', 'Keterampilan Bahasa berhasil dihapus!');
     }
 }

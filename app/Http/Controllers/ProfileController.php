@@ -22,27 +22,29 @@ class ProfileController extends Controller
 
     public function store(Request $request)
     {
+        // Validasi data yang diterima
         $request->validate([
-            'name' => 'required|string|max:255',
+            'nama' => 'required|string|max:255',
             'whatsapp' => 'nullable|url',
             'facebook' => 'nullable|url',
             'twitter' => 'nullable|url',
             'instagram' => 'nullable|url',
             'youtube' => 'nullable|url',
             'linkedin' => 'nullable|url',
-            'profile_picture' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'foto' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
-
+    
         // Upload Foto Profil
         $fotoPath = null;
-        if ($request->hasFile('profile_picture')) {
-            $fotoPath = $request->file('profile_picture')->store('images/profiles', 'public');
+        if ($request->hasFile('foto')) {
+            // Menyimpan foto ke storage dan mengambil path-nya
+            $fotoPath = $request->file('foto')->store('profiles', 'public');
         }
-
+    
         // Simpan Profil Pengguna
         Profile::create([
-            'foto' => $fotoPath,
-            'nama' => $request->name,
+            'foto' => $fotoPath, // Menyimpan path foto yang sudah diupload
+            'nama' => $request->nama,
             'whatsapp' => $request->whatsapp,
             'facebook' => $request->facebook,
             'twitter' => $request->twitter,
@@ -50,13 +52,14 @@ class ProfileController extends Controller
             'youtube' => $request->youtube,
             'linkedin' => $request->linkedin,
         ]);
+    
+        return redirect()->route('profile.index')->with('success', 'Data Profil berhasil ditambahkan!');
+    }    
 
-        return redirect()->route('profile.index')->with('success', 'Profil berhasil disimpan!');
-    }
 
-
-    public function edit(Profile $profile)
+    public function edit($id)
     {
+        $profile = Profile::findOrFail($id);
         return view('dashboard-admin.profile-edit', compact('profile'));
     }
 
@@ -64,53 +67,57 @@ class ProfileController extends Controller
     {
         // Validasi input
         $request->validate([
-            'name' => 'required|string|max:255',
+            'nama' => 'required|string|max:255',
             'whatsapp' => 'nullable|url',
             'facebook' => 'nullable|url',
             'twitter' => 'nullable|url',
             'instagram' => 'nullable|url',
             'youtube' => 'nullable|url',
             'linkedin' => 'nullable|url',
-            'foto' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048', // Validasi foto
+            'foto' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
     
         // Ambil data profil yang sudah ada
         $profile = Profile::findOrFail($id);
     
-        // Jika ada foto baru yang di-upload
+        // Proses update foto jika ada foto yang diupload
         if ($request->hasFile('foto')) {
             // Hapus foto lama jika ada
-            if ($profile->foto && Storage::exists('public/images/profiles/' . $profile->foto)) {
-                Storage::delete('public/images/profiles/' . $profile->foto);
+            if ($profile->foto) {
+                Storage::disk('public')->delete($profile->foto); 
             }
     
-            // Upload foto baru
-            $fotoPath = $request->file('foto')->store('images/profiles', 'public');
-            $profile->foto = basename($fotoPath); // Menyimpan nama file foto baru
+             // Simpan gambar baru dan dapatkan path-nya
+             $profile->foto = $request->file('foto')->store('profiles', 'public');
         }
     
-        // Update data profil lainnya (tanpa mengupdate foto jika tidak ada perubahan)
-        $profile->update([
-            'name' => $request->name,
-            'whatsapp' => $request->whatsapp,
-            'facebook' => $request->facebook,
-            'twitter' => $request->twitter,
-            'instagram' => $request->instagram,
-            'youtube' => $request->youtube,
-            'linkedin' => $request->linkedin,
-        ]);
+        // Update data profil lainnya
+        $profile->nama = $request->nama;
+        $profile->whatsapp = $request->whatsapp;
+        $profile->facebook = $request->facebook;
+        $profile->twitter = $request->twitter;
+        $profile->instagram = $request->instagram;
+        $profile->youtube = $request->youtube;
+        $profile->linkedin = $request->linkedin;
     
-        // Redirect ke halaman profil dengan pesan sukses
-        return redirect()->route('profile.index')->with('success', 'Profil berhasil diperbarui!');
+        // Simpan perubahan pada profil
+        $profile->save();
+    
+        return redirect()->route('profile.index')->with('success', 'Data Profil berhasil diperbarui!');
     }
-    
     
 
     
-    public function destroy(Profile $profile)
+    public function destroy($id)
     {
+        $profile = Profile::findOrFail($id);
+        if ($profile->foto) {
+            Storage::disk('public')->delete($profile->foto);
+        }
         $profile->delete();
-        return redirect()->route('profile.index')->with('success', 'Profil berhasil dihapus.');
+
+        return redirect()->route('profile.index')->with('success', 'Data Profile berhasil dihapus!');
     }
+    
     
 }

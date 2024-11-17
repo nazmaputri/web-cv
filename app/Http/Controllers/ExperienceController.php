@@ -26,10 +26,22 @@ class ExperienceController extends Controller
             'tahun_akhir'   => 'nullable|string',
             'deskripsi'     => 'nullable|string',
         ]);
-
-        Experience::create($request->all());
-        return redirect()->route('experience.index')->with('success', 'Experience created successfully.');
+    
+        // Ambil semua data dari request
+        $data = $request->all();
+    
+        // Jika tahun_akhir null, ubah menjadi 'Present'
+        if (is_null($data['tahun_akhir'])) {
+            $data['tahun_akhir'] = 'Present';
+        }
+    
+        // Menyimpan data ke database
+        Experience::create($data);
+    
+        // Mengarahkan kembali dengan pesan sukses
+        return redirect()->route('experience.index')->with('success', 'Pengalaman Kerja berhasil ditambahkan!');
     }
+    
 
     public function edit($id)
     {
@@ -48,13 +60,13 @@ class ExperienceController extends Controller
 
         $experience = Experience::findOrFail($id);
         $experience->update($request->all());
-        return redirect()->route('experience.index')->with('success', 'Experience updated successfully.');
+        return redirect()->route('experience.index')->with('success', 'Pengalaman Kerja berhasil diperbarui!');
     }
 
     public function destroy($id)
     {
         $experience = Experience::findOrFail($id);
         $experience->delete();
-        return redirect()->route('experience.index')->with('success', 'Experience deleted successfully.');
+        return redirect()->route('experience.index')->with('success', 'Pengalaman Kerja berhasil dihapus!');
     }
 }

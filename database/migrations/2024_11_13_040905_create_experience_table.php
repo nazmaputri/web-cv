@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('pekerjaan');
             $table->year('tahun_mulai');
-            $table->string('tahun_akhir')->nullable();
+            $table->string('tahun_akhir')->nullable()->default('Present');
             $table->string('tempat_kerja');
             $table->text('deskripsi')->nullable();
             $table->timestamps();

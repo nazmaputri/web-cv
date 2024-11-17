@@ -9,13 +9,13 @@
             <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4">
-                    <label for="name" class="block text-sm font-semibold">Nama</label>
-                    <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded" required>
+                    <label for="nama" class="block text-sm font-semibold">Nama</label>
+                    <input type="text" id="nama" name="nama" class="w-full p-2 border border-gray-300 rounded" required>
                 </div>
 
                 <div class="mb-4">
-                    <label for="profile_picture" class="block text-sm font-semibold">Foto Profil</label>
-                    <input type="file" id="profile_picture" name="profile_picture" class="w-full p-2 border border-gray-300 rounded">
+                    <label for="foto" class="block text-sm font-semibold">Foto Profil</label>
+                    <input type="file" id="foto" name="foto" class="w-full p-2 border border-gray-300 rounded">
                 </div>
 
                 <div class="mb-4">

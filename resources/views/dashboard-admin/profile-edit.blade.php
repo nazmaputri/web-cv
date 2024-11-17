@@ -29,16 +29,16 @@
             </div>
             <div class="mb-4">
                 <label for="foto" class="block text-sm font-medium text-gray-700">Foto Profil</label>
-                <input type="file" name="profile_picture" id="foto" class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                @error('profile_picture')
+                <input type="file" name="foto" id="foto" class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                @error('foto')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
         
             <!-- Nama -->
             <div class="mb-4">
-                <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
-                <input type="text" name="name" value="{{ old('name', $profile->nama) }}" class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <label for="nama" class="block text-sm font-medium text-gray-700">Nama</label>
+                <input type="text" name="nama" value="{{ old('nama', $profile->nama) }}" class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                 @error('name')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror

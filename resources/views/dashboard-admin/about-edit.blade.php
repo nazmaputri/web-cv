@@ -26,12 +26,17 @@
 
                     <div class="mb-4">
                         <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                        <textarea name="deskripsi" id="deskripsi" rows="4" required class="border p-2 w-full rounded-md">{{ old('deskripsi', $about->deskripsi) }}</textarea>
+                        <textarea name="deskripsi" id="deskripsi" rows="5" required class="border p-2 w-full rounded-md">{{ old('deskripsi', $about->deskripsi) }}</textarea>
                     </div>
 
                     <div class="mb-4">
                         <label for="umur" class="block text-sm font-medium text-gray-700">Umur</label>
                         <input type="number" name="umur" id="umur" value="{{ old('umur', $about->umur) }}" required class="border p-2 w-full rounded-md">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="provinsi" class="block text-sm font-medium text-gray-700">Provinsi</label>
+                        <input type="text" name="provinsi" id="provinsi" value="{{ old('provinsi', $about->provinsi) }}" required class="border p-2 w-full rounded-md">
                     </div>
                 </div>
 
@@ -55,6 +60,11 @@
                     <div class="mb-4">
                         <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
                         <input type="text" name="alamat" id="alamat" value="{{ old('alamat', $about->alamat) }}" required class="border p-2 w-full rounded-md">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="kota" class="block text-sm font-medium text-gray-700">Kota</label>
+                        <input type="text" name="kota" id="kota" value="{{ old('kota', $about->kota) }}" required class="border p-2 w-full rounded-md">
                     </div>
                 </div>
             </div>

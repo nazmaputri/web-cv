@@ -10,7 +10,7 @@
         </div>
     </div>
 
-  <div class="flex flex-col md:flex-row md:space-x-4 px-4 md:px-0">
+  <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="2500" class="flex flex-col md:flex-row md:space-x-4 px-4 md:px-0">
     <!-- Pengalaman Kerja -->
     <div class="w-full md:w-1/2">
         <h2 data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1500" class="text-xl font-semibold text-sky-800 flex items-center space-x-2 py-4 border-b border-gray-300">
@@ -21,7 +21,7 @@
         
         @foreach ($experience as $experience)
         <!-- MikroTik Trainer -->
-        <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000" class="">
+        <div  class="">
             <ol class="relative border-s border-gray-200">
                 <li class="resume-item mb-5 ms-4 py-4 border-b border-gray-400 group">
                     <div class="absolute w-3 h-3 bg-sky-800 rounded-full mt-1.5 -start-1.5 border border-white group-hover:scale-125 duration-500"></div>

@@ -24,7 +24,7 @@
         </div>
 
         <div class="">
-            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
+            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi Gelar</label>
             <textarea name="deskripsi" id="deskripsi" class="mt-1 block w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:ring-cyan-200"></textarea>
         </div>
 
