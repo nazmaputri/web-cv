@@ -1,7 +1,5 @@
 <?php
 
-// database/migrations/xxxx_xx_xx_xxxxxx_create_about_table.php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,7 +12,7 @@ class CreateAboutTable extends Migration
             $table->id();
             $table->string('judul');
             $table->text('deskripsi');
-            $table->integer('umur');
+            $table->date('tanggal_lahir');
             $table->string('alamat');
             $table->string('negara');
             $table->string('provinsi')->nullable();

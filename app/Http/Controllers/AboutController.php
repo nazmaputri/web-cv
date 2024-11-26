@@ -19,14 +19,14 @@ class AboutController extends Controller
     {
         return view('dashboard-admin.about-create');
     }
-
-    // Simpan data baru ke database
+    
     public function store(Request $request)
     {
+        // Validasi input
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'umur' => 'required|integer',
+            'tanggal_lahir' => 'required|date|before:today',
             'alamat' => 'required|string|max:255',
             'negara' => 'required|string|max:255',
             'provinsi' => 'required|string',
@@ -34,25 +34,38 @@ class AboutController extends Controller
             'email' => 'required|email|unique:about,email',
             'no_telp' => 'required|string|max:20',
         ]);
-
-        About::create($request->all());
-
+    
+        // Simpan data ke database
+        About::create([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat' => $request->alamat,
+            'negara' => $request->negara,
+            'provinsi' => $request->provinsi,
+            'kota' => $request->kota,
+            'email' => $request->email,
+            'no_telp' => $request->no_telp,
+        ]);
+    
+        // Redirect ke halaman index dengan pesan sukses
         return redirect()->route('about.index')->with('success', 'Data About berhasil ditambahkan!');
     }
+    
 
     // Tampilkan halaman form edit data About
     public function edit(About $about)
     {
         return view('dashboard-admin.about-edit', compact('about'));
     }
-
-    // Update data yang telah diedit
+    
     public function update(Request $request, About $about)
     {
+        // Validasi input
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'umur' => 'required|integer',
+            'tanggal_lahir' => 'required|date|before:today',
             'alamat' => 'required|string|max:255',
             'negara' => 'required|string|max:255',
             'provinsi' => 'required|string',
@@ -60,11 +73,24 @@ class AboutController extends Controller
             'email' => 'required|email|unique:about,email,' . $about->id,
             'no_telp' => 'required|string|max:20',
         ]);
-
-        $about->update($request->all());
-
+    
+        // Update data di database
+        $about->update([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat' => $request->alamat,
+            'negara' => $request->negara,
+            'provinsi' => $request->provinsi,
+            'kota' => $request->kota,
+            'email' => $request->email,
+            'no_telp' => $request->no_telp,
+        ]);
+    
+        // Redirect ke halaman index dengan pesan sukses
         return redirect()->route('about.index')->with('success', 'Data About berhasil diperbarui!');
     }
+    
 
     // Hapus data
     public function destroy(About $about)

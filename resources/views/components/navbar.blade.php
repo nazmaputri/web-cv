@@ -13,6 +13,26 @@
                     <div class="items-center text-center justify-center w-full" id="navbar-sticky">
                         <ul class="flex md:flex-col space-x-3 md:space-y-4 items-center justify-around md:justify-center md:space-x-0">
                             {{-- <a href="/" class="block lg:hidden px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 {{ Request::is('/') ? 'text-sky-800 border-b-4 md:border-l-4 border-sky-700' : 'hover:bg-gray-200  text-gray-600' }} duration-500"><i class="fa-solid fa-house"></i></a> --}}
+                             <!-- Dropdown untuk Ganti Bahasa -->
+                            <div class="relative group inline-block">
+                                <button class="block px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700">
+                                    <i class="fa-solid fa-globe fa-lg"></i>
+                                </button>
+                                <div class="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                    <ul class="py-2 text-sm text-gray-700">
+                                        <li>
+                                            <a href="/locale/id" class="block px-4 py-2 hover:bg-gray-200 {{ app()->getLocale() == 'id' ? 'text-sky-700' : 'text-gray-600' }}">
+                                                Bahasa Indonesia
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/locale/en" class="block px-4 py-2 hover:bg-gray-200 {{ app()->getLocale() == 'en' ? 'text-sky-700' : 'text-gray-600' }}">
+                                                English
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                             <div class="relative group inline-block">
                                 <a href="/" class="block px-4 py-2 hover:bg-gray-200 hover:text-sky-800 md:rounded focus:text-sky-800 focus:border-b-4 md:focus:border-l-4 focus:border-sky-700 group {{ Request::is('/') ? 'text-sky-700 border-b-4 md:border-l-4 border-sky-700 bg-gray-200' : 'hover:bg-gray-200  text-gray-600' }} duration-300"><i class="fa-solid fa-user-tie fa-lg group-hover:scale-105 duration-300"></i></a>
                                 <span class="hidden md:flex absolute left-full top-1/2 transform -translate-y-1/2 ml-2 text-sm text-white bg-sky-700 p-2 rounded opacity-0 group-hover:opacity-75 group-hover:ml-3 transition-opacity duration-300">

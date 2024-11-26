@@ -29,7 +29,7 @@
         <!-- foto profile -->
         <a href="" class="inline-block ml-4">
             <img 
-                src="{{ asset('storage/sw.jpg') }}"
+                src="{{ asset('storage/images/sw.jpg') }}"
                 alt="Profile Admin" 
                 class="w-12 h-12 rounded-full object-cover"
             />
@@ -188,7 +188,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                    <a href="#" id="logout-btn" class="block flex space-x-3 bg-gray-100 hover:bg-gray-200 items-center p-3  text-gray-700 duration-200">
+                                    <a href="#" id="logout-btn" class="block flex space-x-3 hover:bg-gray-200 items-center p-3  text-gray-700 duration-200">
                                         <i class="fa-solid fa-right-from-bracket"></i>
                                         <span>Logout</span>
                                     </a>

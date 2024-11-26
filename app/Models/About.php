@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class About extends Model
 {
@@ -14,7 +15,7 @@ class About extends Model
     protected $fillable = [
         'judul',
         'deskripsi',
-        'umur',
+        'tanggal_lahir',
         'alamat',
         'negara',
         'kota',
@@ -22,5 +23,14 @@ class About extends Model
         'email',
         'no_telp',
     ];
+
+    public function getUmurAttribute()
+    {
+        if ($this->tanggal_lahir) {
+            return Carbon::parse($this->tanggal_lahir)->age;
+        }
+
+        return null; 
+    }
 }
 

@@ -20,9 +20,10 @@
             </div>
 
             <div class="mb-4">
-                <label for="umur" class="block text-sm font-semibold text-gray-700">Umur</label>
-                <input type="text" id="umur" name="umur" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <label for="tanggal_lahir" class="block text-sm font-semibold text-gray-700">Tanggal Lahir</label>
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
             </div>
+            
 
             <div class="mb-4">
                 <label for="alamat" class="block text-sm font-semibold text-gray-700">Alamat Lengkap</label>

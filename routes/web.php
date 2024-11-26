@@ -13,8 +13,8 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\CVController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\LocaleController;
 
-//Landing Page
 Route::get('/', [LandingPageController::class, 'about'])->name('about');
 Route::get('/lp-resume', [LandingPageController::class, 'resume'])->name('resume');
 Route::get('/lp-certificate', [LandingPageController::class, 'certificate'])->name('certificate');
@@ -25,12 +25,13 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('login')->m
 Route::post('login', [LoginController::class, 'login'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::get('locale/{lang}', [LocaleController::class, 'setLocale']);
 
 Route::middleware(['auth'])->group(function () {
     // Settings
     Route::get('/settings', [SettingController::class, 'show'])->name('settings');
     Route::post('/settings', [SettingController::class, 'update']);
-    
+        
     // Dashboard 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('profile', ProfileController::class);
@@ -43,13 +44,4 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/download-cv', [CVController::class, 'downloadCV'])->name('download.cv');
-
-
-
-
-
-
-
-
-
 

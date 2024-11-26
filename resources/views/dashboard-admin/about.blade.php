@@ -35,7 +35,8 @@
                             <p class=""><strong>Deskripsi :</strong></p>
                             <span>{{ $about->deskripsi }}</span>
                         </div>
-                        <p class="text-gray-700 mb-2 border-b pb-2"><strong>Umur :</strong> {{ $about->umur }}</p>
+                        <p class="text-gray-700 mb-2 border-b pb-2"><strong>Tanggal Lahir :</strong> {{ \Carbon\Carbon::parse($about->tanggal_lahir)->format('d M Y') }}</p>
+                        <p class="text-gray-700 mb-2 border-b pb-2"><strong>Umur :</strong> {{ $about->umur }} tahun</p>
                         <p class="text-gray-700 mb-2 border-b pb-2"><strong>Alamat :</strong> {{ $about->alamat }}</p>
                     </div>
 

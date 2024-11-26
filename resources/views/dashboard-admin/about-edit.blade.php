@@ -30,9 +30,10 @@
                     </div>
 
                     <div class="mb-4">
-                        <label for="umur" class="block text-sm font-medium text-gray-700">Umur</label>
-                        <input type="number" name="umur" id="umur" value="{{ old('umur', $about->umur) }}" required class="border p-2 w-full rounded-md">
+                        <label for="tanggal_lahir" class="block text-sm font-medium text-gray-700">Tanggal Lahir</label>
+                        <input type="date" name="tanggal_lahir" id="tanggal_lahir" value="{{ old('tanggal_lahir', $about->tanggal_lahir) }}" required class="border p-2 w-full rounded-md">
                     </div>
+                    
 
                     <div class="mb-4">
                         <label for="provinsi" class="block text-sm font-medium text-gray-700">Provinsi</label>

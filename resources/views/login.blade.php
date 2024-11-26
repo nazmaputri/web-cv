@@ -26,6 +26,10 @@
                 @error('password')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
+                 <!-- Error Message -->
+                @if($errors->any())
+                    <p class="text-red-500 text-xs mt-4">{{ $errors->first() }}</p>
+                @endif
             </div>
             <!-- Login Button -->
             <div class="flex text-end items-end justify-end space-x-3">
@@ -34,10 +38,6 @@
                     Login
                 </button>
             </div>
-            <!-- Error Message -->
-            @if($errors->any())
-                <p class="text-red-500 text-xs mt-4">{{ $errors->first() }}</p>
-            @endif
         </form>
     </div>
 </body>
